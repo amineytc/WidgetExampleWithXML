@@ -15,4 +15,15 @@ dependencyResolutionManagement {
 
 rootProject.name = "WidgetExampleWithXML"
 include(":app")
- 
+include(":core")
+include(":core:common")
+include(":core:data")
+include(":core:domain")
+include(":core:network")
+include(":core:presentation")
+include(":feature")
+include(":feature:home")
+include(":feature:splash")
+include(":feature:widget")
+include(":navigation-shared")
+include(":core:localization")

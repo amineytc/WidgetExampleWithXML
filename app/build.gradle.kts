@@ -40,9 +40,24 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    sourceSets{
+        getByName("debug").res.srcDirs("$rootDir/navigation-shared/src/main/sharedRes")
+    }
 }
 
 dependencies {
+
+    implementation(project(":core:common"))
+    implementation(project(":core:data"))
+    implementation(project(":core:domain"))
+    implementation(project(":core:localization"))
+    implementation(project(":core:network"))
+    implementation(project(":core:presentation"))
+    implementation(project(":feature:home"))
+    implementation(project(":feature:splash"))
+    implementation(project(":feature:widget"))
+    implementation(project(":navigation-shared"))
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.7.0")
@@ -51,6 +66,12 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+
+    // view model ktx
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7")
+
+    // fragment - by view models
+    implementation("androidx.fragment:fragment-ktx:1.8.6")
 
     // Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
